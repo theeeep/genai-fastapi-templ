@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 
@@ -19,10 +21,12 @@ async def agent_exception_handler(request: Request, exc: AgentException):
     return JSONResponse(
         status_code=exc.status_code,
         content={
-            "status": "error",
+            "status": exc.status_code,  # Changed from "error" to numeric status
             "message": exc.message,
             "details": exc.details,
             "path": request.url.path,
+            "timestamp": datetime.utcnow().isoformat(),
+            "request_id": request.state.request_id,
         },
     )
 
