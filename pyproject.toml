@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "fast-ai-templ"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.8",
+    "langchain>=0.3.19",
+    "langchain-anthropic>=0.3.7",
+    "langchain-openai>=0.3.6",
+    "loguru>=0.7.3",
+    "pydantic-settings>=2.7.1",
+    "uvicorn>=0.34.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.5",
+    "httpx>=0.26.0",
+    "ruff>=0.2.1",
+]
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 150
+target-version = "py313"
+
+[tool.ruff.isort]
+known-first-party = ["src"]
+known-third-party = ["fastapi", "pydantic", "langchain"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+]
+
+[tool.mypy]
+python_version = "3.13"
+disallow_untyped_defs = true
+check_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"      # Automatically handles async tests
+testpaths = ["tests"]      # Directory where tests are located
+python_files = ["test_*.py"] # Pattern for test files
+pythonpath = ["."]         # Adds current directory to Python path
