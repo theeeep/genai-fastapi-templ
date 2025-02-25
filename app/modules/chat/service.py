@@ -1,6 +1,6 @@
 from langchain_core.messages import HumanMessage
 
-from src.llm.llm_factory import LLMFactory
+from app.llm.llm_factory import LLMFactory
 
 from .schema import ChatRequest
 

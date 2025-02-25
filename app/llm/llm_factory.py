@@ -2,8 +2,8 @@ from langchain.chat_models.base import BaseChatModel
 from langchain_anthropic import ChatAnthropic
 from langchain_openai import ChatOpenAI
 
-from src.config.llm_settings import get_llm_settings
-from src.middlewares.error_handler import AgentException
+from app.config.llm_settings import get_llm_settings
+from app.middlewares.error_handler import AgentException
 
 
 class LLMFactory:

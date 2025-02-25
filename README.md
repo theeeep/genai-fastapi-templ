@@ -49,10 +49,10 @@ alembic downgrade -1
 Running the Application
 
 # Development
-uvicorn src.main:app --reload
+uvicorn app.main:app --reload
 
 # Production
-uvicorn src.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 API Documentation
 - Swagger UI: http://localhost:8000/docs

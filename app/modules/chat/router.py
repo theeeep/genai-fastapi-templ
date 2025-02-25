@@ -2,8 +2,8 @@ from uuid import uuid4
 
 from fastapi import APIRouter, status
 
-from src.core.schemas.response import Response
-from src.middlewares.error_handler import AgentException, BadRequestError
+from app.core.schemas.response import Response
+from app.middlewares.error_handler import AgentException, BadRequestError
 
 from .schema import ChatRequest
 from .service import ChatService

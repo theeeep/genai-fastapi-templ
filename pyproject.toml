@@ -33,14 +33,14 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["src"]
+packages = ["app"]
 
 [tool.ruff]
 line-length = 150
 target-version = "py313"
 
 [tool.ruff.isort]
-known-first-party = ["src"]
+known-first-party = ["app"]
 known-third-party = ["fastapi", "pydantic", "langchain"]
 
 [tool.ruff.lint]

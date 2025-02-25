@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import text
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from src.core.schemas.response import Response
-from src.database.db import get_session
+from app.core.schemas.response import Response
+from app.database.db import get_session
 
 health_router = APIRouter()
 

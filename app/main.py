@@ -3,11 +3,11 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from src.core.logger import logger
-from src.database.db import close_db, init_db
-from src.middlewares.error_handler import register_exception_handlers
-from src.modules.chat.router import chat_router
-from src.modules.health.router import health_router
+from app.core.logger import logger
+from app.database.db import close_db, init_db
+from app.middlewares.error_handler import register_exception_handlers
+from app.modules.chat.router import chat_router
+from app.modules.health.router import health_router
 
 logger.info("Main Application")
 
