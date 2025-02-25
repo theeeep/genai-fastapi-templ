@@ -53,7 +53,7 @@ alembic downgrade -1
 #### Using Docker
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/theeeep/genai-fastapi-templ
 
 # Set up environment variables
 cp .env.example .env
